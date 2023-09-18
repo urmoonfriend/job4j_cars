@@ -1,4 +1,24 @@
 
 # Pet project "Cars"
 
-### Web app using Spring MVC and Spring Boot, Hibernate, Liquibase
+## Описание проекта:
+Сайт по продаже машин
+
+На сайте должны быть объявления.
+В объявлении должно быть: описание, марка машины, тип кузова, фото.
+Объявление имеет статус продано или нет.
+
+## Стек технологий:
+#### - Java 17, PostgreSQL 15.2, Liquibase, Maven, Mockito, Spring Boot, Thymeleaf, Hibernate
+
+## Требования к окружению
+#### - Java 17, Maven 4.0, PostgreSQL 15
+
+## Запуск проекта
+#### - Создание бд в СУБД
+#### - Запуск миграционных файлов
+
+## Контакты
+#### - @urmoonfriend
+
+
