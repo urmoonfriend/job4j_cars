@@ -5,7 +5,6 @@ import lombok.*;
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded  = true)
 public class Category {
-    @NonNull
     @Getter
     @EqualsAndHashCode.Include
     private int id;
