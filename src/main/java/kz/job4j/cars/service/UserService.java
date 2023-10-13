@@ -1,14 +1,16 @@
-package kz.job4j.cars.repository;
+package kz.job4j.cars.service;
 
+import kz.job4j.cars.models.dto.UserDto;
 import kz.job4j.cars.models.entity.User;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface UserRepository {
-    User create(User user);
+public interface UserService {
 
-    void update(User user);
+    User create(UserDto user);
+
+    void update(UserDto user);
 
     void delete(int userId);
 

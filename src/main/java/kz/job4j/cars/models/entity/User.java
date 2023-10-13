@@ -1,4 +1,4 @@
-package kz.job4j.cars.models;
+package kz.job4j.cars.models.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
