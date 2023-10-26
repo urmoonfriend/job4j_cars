@@ -31,6 +31,12 @@ public class Post {
     @JoinColumn(name = "auto_post_id")
     private List<PriceHistory> priceHistories = new ArrayList<>();
 
+    @ManyToMany
+    @JoinTable(name = "participates",
+            joinColumns = { @JoinColumn(name = "post_id")},
+            inverseJoinColumns = { @JoinColumn(name = "user_id")})
+    private List<User> userListToNotificate = new ArrayList<>();
+
     @CreationTimestamp
     private LocalDateTime created;
 }
