@@ -4,6 +4,6 @@ CREATE TABLE PRICE_HISTORY
     before  BIGINT not null,
     after   BIGINT not null,
     auto_post_id int REFERENCES auto_post(id),
-    created TIMESTAMP WITHOUT TIME ZONE DEFAULT now(),
+    created TIMESTAMP WITHOUT TIME ZONE DEFAULT now()
 );
 
