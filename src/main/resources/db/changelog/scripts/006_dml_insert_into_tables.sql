@@ -8,15 +8,13 @@ values ('1.6-liter petrol'),
        ('2.0-liter turbocharged petrol');
 
 insert into car(name, engine_id)
-values ('Lada Granta', 1),
-       ('Lada Niva', 2),
-       ('Haval Jolion', 4),
-       ('Chery Tiggo 7 Pro', 4),
-       ('Geely Coolray', 4),
-       ('Chery Tiggo Pro 4', 4),
-       ('Haval F7x', 7),
-       ('Geely Atlas Pro', 6),
-       ('Chery Tiggo 8 Pro', 5);
+values ('Lada Granta', select id from engine where name = '1.6-liter petrol'),
+       ('Lada Niva', select id from engine where name = '1.7-liter petrol'),
+       ('Haval Jolion', select id from engine where name = '1.8-liter petrol'),
+       ('Chery Tiggo 7 Pro', select id from engine where name = '1.5-liter turbocharged petrol'),
+       ('Haval F7x', select id from engine where name = '1.6-liter turbocharged petrol'),
+       ('Geely Atlas Pro', select id from engine where name = '1.8-liter turbocharged petrol'),
+       ('Chery Tiggo 8 Pro', select id from engine where name = '2.0-liter turbocharged petrol');
 
 insert into owners(name, user_id)
 values ('Ivanov', 1),
@@ -30,10 +28,4 @@ values (1, 1),
        (2, 4),
        (2, 5),
        (2, 6),
-       (3, 7),
-       (3, 8),
-       (3, 9);
-
-
-
-
+       (3, 7);
