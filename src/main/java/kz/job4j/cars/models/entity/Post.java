@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "auto_user")
+@Table(name = "auto_post")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -36,6 +36,10 @@ public class Post {
             joinColumns = { @JoinColumn(name = "post_id")},
             inverseJoinColumns = { @JoinColumn(name = "user_id")})
     private List<User> userListToNotificate = new ArrayList<>();
+
+    @OneToOne
+    @JoinColumn(name = "car_id")
+    private Car car;
 
     @CreationTimestamp
     private LocalDateTime created;
