@@ -21,7 +21,7 @@ create table owners
 create table history_owner
 (
     id       serial primary key,
-    owner_id int not null references owner (id),
+    owner_id int not null references owners (id),
     car_id   int not null references car (id),
     start_at TIMESTAMP WITHOUT TIME ZONE DEFAULT now(),
     end_at   TIMESTAMP WITHOUT TIME ZONE DEFAULT now()
