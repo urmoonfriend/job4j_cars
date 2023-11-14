@@ -1,10 +1,10 @@
 package kz.job4j.cars.repository.impl;
 
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.SimpleExpression;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -70,6 +70,18 @@ public class CrudRepositoryImpl implements kz.job4j.cars.repository.CrudReposito
                 sq.setParameter(arg.getKey(), arg.getValue());
             }
             return sq.list();
+        };
+        return tx(command);
+    }
+
+    @Override
+    public <T> List<T> criteriaQuery(Class<T> cl, List<SimpleExpression> filters) {
+        Function<Session, List<T>> command = session -> {
+            var criteria = session.createCriteria(cl);
+            for (SimpleExpression expression : filters) {
+                criteria.add(expression);
+            }
+            return criteria.list();
         };
         return tx(command);
     }

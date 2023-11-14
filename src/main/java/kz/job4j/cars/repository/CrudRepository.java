@@ -1,6 +1,7 @@
 package kz.job4j.cars.repository;
 
 import org.hibernate.Session;
+import org.hibernate.criterion.SimpleExpression;
 
 import java.util.List;
 import java.util.Map;
@@ -18,6 +19,8 @@ public interface CrudRepository {
     <T> List<T> query(String query, Class<T> cl);
 
     <T> List<T> query(String query, Class<T> cl, Map<String, Object> args);
+
+    <T> List<T> criteriaQuery(Class<T> cl, List<SimpleExpression> filters);
 
     <T> T tx(Function<Session, T> command);
 }
