@@ -18,7 +18,7 @@ public interface PostRepository {
 
     List<Post> findForTheLastDay();
 
-    List<Post> findWithDescription();
+    List<Post> findWithPhoto();
 
     List<Post> findCarByName(String name);
 }

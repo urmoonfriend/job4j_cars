@@ -41,6 +41,10 @@ public class Post {
     @JoinColumn(name = "car_id")
     private Car car;
 
+    @OneToOne
+    @JoinColumn(name = "photo_id")
+    private Photo photo;
+
     @CreationTimestamp
     private LocalDateTime created;
 }

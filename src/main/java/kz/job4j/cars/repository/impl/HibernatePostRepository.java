@@ -74,15 +74,15 @@ public class HibernatePostRepository implements PostRepository {
     @Override
     public List<Post> findForTheLastDay() {
         List<SimpleExpression> filters = new ArrayList<>();
-        filters.add(Restrictions.ge("created", LocalDate.now().atTime(LocalTime.MIN)));
-        filters.add(Restrictions.le("created", LocalDate.now().atTime(LocalTime.MAX)));
+        filters.add(Restrictions.ge("created", LocalTime.now().minusHours(24)));
+        filters.add(Restrictions.le("created", LocalTime.now()));
         return crudRepository.criteriaQuery(Post.class, filters);
     }
 
     @Override
-    public List<Post> findWithDescription() {
+    public List<Post> findWithPhoto() {
         List<SimpleExpression> filters = new ArrayList<>();
-        filters.add(Restrictions.ne("description", null));
+        filters.add(Restrictions.ne("photo", null));
         return crudRepository.criteriaQuery(Post.class, filters);
     }
 
