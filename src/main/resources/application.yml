@@ -11,7 +11,7 @@ spring:
     hibernate:
       ddl-auto: update
 
-datasourc:
+datasource:
   url: ${spring.datasource.url}
   username: ${spring.datasource.username}
   password: ${spring.datasource.password}

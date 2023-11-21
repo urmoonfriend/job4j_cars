@@ -12,4 +12,6 @@
     <include file="scripts/005_ddl_create_tables.sql" relativeToChangelogFile="true"/>
     <include file="scripts/006_dml_insert_into_tables.sql" relativeToChangelogFile="true"/>
     <include file="scripts/007_ddl_alter_table.sql" relativeToChangelogFile="true"/>
+    <include file="scripts/008_ddl_create_photos_table.sql" relativeToChangelogFile="true"/>
+    <include file="scripts/009_dml_alter_post_table.sql" relativeToChangelogFile="true"/>
 </databaseChangeLog>

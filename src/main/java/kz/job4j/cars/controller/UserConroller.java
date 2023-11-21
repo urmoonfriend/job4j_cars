@@ -33,7 +33,7 @@ public class UserConroller {
     }
 
     @GetMapping("/{userId}")
-    public ResponseEntity<User> getAll(@PathVariable("userId") Integer userId) {
+    public ResponseEntity<User> getById(@PathVariable("userId") Integer userId) {
         Optional<User> userOpt = userService.findById(userId);
         return userOpt.map(ResponseEntity::ok)
                 .orElseGet(
