@@ -10,6 +10,8 @@ public interface UserService {
 
     User create(UserDto user);
 
+    Optional<User> create(User user);
+
     void update(UserDto user);
 
     void delete(int userId);
@@ -21,4 +23,6 @@ public interface UserService {
     List<User> findByLikeLogin(String key);
 
     Optional<User> findByLogin(String login);
+
+    Optional<User> findByEmailAndPassword(String login, String password);
 }

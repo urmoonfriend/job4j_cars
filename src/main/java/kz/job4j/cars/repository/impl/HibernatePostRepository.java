@@ -36,7 +36,7 @@ public class HibernatePostRepository implements PostRepository {
      */
     @Override
     public void update(Post post) {
-        crudRepository.run(session -> session.persist(post));
+        crudRepository.run(session -> session.merge(post));
     }
 
     /**
@@ -67,7 +67,10 @@ public class HibernatePostRepository implements PostRepository {
      */
     @Override
     public Optional<Post> findById(int postId) {
-        return crudRepository.optional("from Post where id = :pId", Post.class,
+        return crudRepository.optional("from Post p" +
+                        " JOIN FETCH p.photo " +
+                        " JOIN FETCH p.car " +
+                        " where p.id = :pId", Post.class,
                 Map.of("pId", postId));
     }
 

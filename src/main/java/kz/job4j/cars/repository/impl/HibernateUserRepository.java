@@ -94,4 +94,11 @@ public class HibernateUserRepository implements UserRepository {
                 Map.of("fLogin", login)
         );
     }
+
+    @Override
+    public Optional<User> findByEmailAndPassword(String login, String password) {
+        return crudRepository.optional("from User where login = :fLogin and password = :fPassword", User.class,
+                Map.of("fLogin", login,
+                        "fPassword", password));
+    }
 }
