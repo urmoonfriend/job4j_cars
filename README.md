@@ -40,25 +40,25 @@ database cinema;
 
 ## Взаимодействие с приложением
 1) Главная страница
-   ![main.png](interface pictures/main.png)
+   ![interface/main.png](interface/main.png)
 
 2. Объявления
-   ![interface pictures/posts_list.png](interface pictures/posts_list.png)
+   ![interface/posts_list.png](interface/posts_list.png)
 
 3. Страница объявления
-   ![interface pictures/one_post.png](interface pictures/one_post.png)
+   ![interface/one_post.png](interface/one_post.png)
 
 4. Обновление объявления
-   ![interface pictures/update.png](interface pictures/update.png)
+   ![interface/update.png](interface/update.png)
 
 5. Создание объявления
-   ![interface pictures/create.png](interface pictures/create.png)
+   ![interface/create.png](interface/create.png)
 
 6. Страница входа
-   ![interface pictures/login.png](interface pictures/login.png)
+   ![interface/login.png](interface/login.png)
 
 7. Страница регистрации
-   ![interface pictures/register.png](interface pictures/register.png)
+   ![interface/register.png](interface/register.png)
 
 ## Контакты
 #### - @urmoonfriend
