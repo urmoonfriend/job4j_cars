@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -17,10 +18,13 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Accessors(chain = true)
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    private String title;
     private String description;
 
     @ManyToOne
@@ -41,9 +45,12 @@ public class Post {
     @JoinColumn(name = "car_id")
     private Car car;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "photo_id")
     private Photo photo;
+
+    @Column(name = "is_sold")
+    private boolean sold;
 
     @CreationTimestamp
     private LocalDateTime created;

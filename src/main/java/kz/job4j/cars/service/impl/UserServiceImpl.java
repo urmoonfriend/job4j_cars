@@ -23,6 +23,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public Optional<User> create(User user) {
+        return Optional.of(userRepository.create(user));
+    }
+
+    @Override
     public void update(UserDto userDto) {
         userRepository.update(userMapper.getEntityFromDto(userDto));
     }
@@ -50,5 +55,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public Optional<User> findByLogin(String login) {
         return userRepository.findByLogin(login);
+    }
+
+    @Override
+    public Optional<User> findByEmailAndPassword(String login, String password) {
+        return userRepository.findByEmailAndPassword(login, password);
     }
 }
