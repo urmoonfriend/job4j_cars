@@ -29,6 +29,7 @@ public class PostController {
     private final UserService userService;
 
     private final CarService carService;
+
     @GetMapping
     public String getAll(Model model, HttpSession session) {
         model.addAttribute(

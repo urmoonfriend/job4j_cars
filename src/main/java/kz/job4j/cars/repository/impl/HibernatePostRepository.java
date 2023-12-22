@@ -67,10 +67,10 @@ public class HibernatePostRepository implements PostRepository {
      */
     @Override
     public Optional<Post> findById(int postId) {
-        return crudRepository.optional("from Post p" +
-                        " JOIN FETCH p.photo " +
-                        " JOIN FETCH p.car " +
-                        " where p.id = :pId", Post.class,
+        return crudRepository.optional("from Post p"
+                        + " JOIN FETCH p.photo "
+                        + " JOIN FETCH p.car "
+                        + " where p.id = :pId", Post.class,
                 Map.of("pId", postId));
     }
 

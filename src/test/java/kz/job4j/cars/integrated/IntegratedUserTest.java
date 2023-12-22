@@ -37,18 +37,22 @@ public class IntegratedUserTest {
     public void setup() {
         user1 = new User()
                 .setLogin("login1")
+                .setName("name1")
                 .setPassword("password1");
 
         user2 = new User()
                 .setLogin("login2")
+                .setName("name2")
                 .setPassword("password2");
 
         userDto1 = new UserDto()
                 .setLogin("login1")
+                .setName("name1")
                 .setPassword("password1");
 
         userDto2 = new UserDto()
                 .setLogin("login2")
+                .setName("name2")
                 .setPassword("password2");
     }
 
