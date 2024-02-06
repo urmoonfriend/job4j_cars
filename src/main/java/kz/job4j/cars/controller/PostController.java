@@ -123,10 +123,14 @@ public class PostController {
     }
 
     @PostMapping("/update")
-    public String update(@ModelAttribute PostDto post, Model model) {
-        var postToUpdate = postService.findById(post.getId());
-        post.setPhoto(postToUpdate.get().getPhoto());
-        postService.update(post);
+    public String update(@ModelAttribute PostDto postDto, Model model, HttpServletRequest request) {
+        var postToUpdate = postService.findById(postDto.getId());
+        if (postToUpdate.isEmpty()) {
+            model.addAttribute("message", "Объявление с указанным идентификатором не найдено");
+            return "errors/404";
+        }
+        postDto.setPhoto(postToUpdate.get().getPhoto());
+        postService.update(postDto);
         model.addAttribute("post", postToUpdate.get());
         return "posts/one";
     }

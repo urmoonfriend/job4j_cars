@@ -8,9 +8,11 @@ import org.hibernate.criterion.Restrictions;
 import org.hibernate.criterion.SimpleExpression;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
@@ -66,7 +68,7 @@ public class HibernatePostRepository implements PostRepository {
      * @return объявление.
      */
     @Override
-    public Optional<Post> findById(int postId) {
+    public Optional<Post> findById(Integer postId) {
         return crudRepository.optional("from Post p"
                         + " JOIN FETCH p.photo "
                         + " JOIN FETCH p.car "

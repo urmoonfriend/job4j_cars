@@ -1,11 +1,13 @@
 package kz.job4j.cars.repository;
 
+import kz.job4j.cars.EnvConfigTest;
 import kz.job4j.cars.models.dto.UserDto;
 import kz.job4j.cars.models.entity.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,7 +15,8 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-public class UserRepositoryTest {
+@ActiveProfiles("test")
+public class UserRepositoryTest extends EnvConfigTest {
     @Autowired
     private UserRepository userRepository;
 
@@ -26,7 +29,7 @@ public class UserRepositoryTest {
     private UserDto userDto2;
 
     @BeforeEach
-    public void setup() {
+    public void init() {
         user1 = new User()
                 .setLogin("login1")
                 .setName("name1")

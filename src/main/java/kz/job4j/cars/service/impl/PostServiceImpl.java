@@ -11,7 +11,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.ModelMap;
 
 import java.util.List;
 import java.util.Optional;
@@ -65,7 +64,7 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public Optional<Post> findById(int postId) {
+    public Optional<Post> findById(Integer postId) {
         return postRepository.findById(postId);
     }
 

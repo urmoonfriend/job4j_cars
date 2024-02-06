@@ -1,0 +1,22 @@
+server:
+  port: 8081
+file:
+  directory: photos
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  datasource:
+    url:
+      jdbc: h2:./testdb;MODE=PostgreSQL;CASE_INSENSITIVE_IDENTIFIERS=TRUE;
+      username:
+      password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+datasource:
+  url: ${spring.datasource.url}
+  username: ${spring.datasource.username}
+  password: ${spring.datasource.password}

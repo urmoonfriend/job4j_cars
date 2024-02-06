@@ -19,7 +19,7 @@ public interface PostService {
 
     List<Post> findAllOrderById();
 
-    Optional<Post> findById(int postId);
+    Optional<Post> findById(Integer postId);
 
     List<Post> findForTheLastDay();
 

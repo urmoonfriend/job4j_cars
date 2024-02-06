@@ -1,5 +1,6 @@
 package kz.job4j.cars.service;
 
+import kz.job4j.cars.EnvConfigTest;
 import kz.job4j.cars.mapper.UserMapper;
 import kz.job4j.cars.models.dto.UserDto;
 import kz.job4j.cars.models.entity.User;
@@ -9,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,12 +19,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
-public class UserServiceTest {
+@ActiveProfiles("test")
+public class UserServiceTest extends EnvConfigTest {
 
     @Autowired
     private UserService userService;
 
-    @Autowired UserMapper userMapper;
+    @Autowired
+    UserMapper userMapper;
 
     @MockBean
     private UserRepository userRepository;
@@ -33,7 +37,7 @@ public class UserServiceTest {
     private UserDto userDto2;
 
     @BeforeEach
-    public void setup() {
+    public void init() {
         user1 = new User()
                 .setLogin("login1")
                 .setPassword("password1");

@@ -1,5 +1,6 @@
 package kz.job4j.cars.integrated;
 
+import kz.job4j.cars.EnvConfigTest;
 import kz.job4j.cars.controller.UserConroller;
 import kz.job4j.cars.models.dto.UserDto;
 import kz.job4j.cars.models.entity.User;
@@ -12,13 +13,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-public class IntegratedUserTest {
+@ActiveProfiles("test")
+public class IntegratedUserTest extends EnvConfigTest {
     @Autowired
     private UserConroller userConroller;
     @Autowired
@@ -34,7 +37,7 @@ public class IntegratedUserTest {
     private UserDto userDto2;
 
     @BeforeEach
-    public void setup() {
+    public void init() {
         user1 = new User()
                 .setLogin("login1")
                 .setName("name1")
