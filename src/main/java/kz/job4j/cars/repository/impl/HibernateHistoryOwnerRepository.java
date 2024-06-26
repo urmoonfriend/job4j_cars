@@ -2,7 +2,7 @@ package kz.job4j.cars.repository.impl;
 
 import kz.job4j.cars.models.entity.HistoryOwner;
 import kz.job4j.cars.repository.CrudRepository;
-import kz.job4j.cars.repository.HistoryOwnerRepository;
+import kz.job4j.cars.repository.DatabaseRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
-public class HibernateHistoryOwnerRepository implements HistoryOwnerRepository {
+public class HibernateHistoryOwnerRepository implements DatabaseRepository<HistoryOwner> {
     private final CrudRepository crudRepository;
 
     /**

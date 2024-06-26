@@ -2,7 +2,7 @@ package kz.job4j.cars.service.impl;
 
 import kz.job4j.cars.models.dto.FileDto;
 import kz.job4j.cars.models.entity.Photo;
-import kz.job4j.cars.repository.PhotoRepository;
+import kz.job4j.cars.repository.DatabaseRepository;
 import kz.job4j.cars.service.FileService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,7 +18,7 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 public class SimpleFileService implements FileService {
-    private final PhotoRepository photoRepository;
+    private final DatabaseRepository<Photo> photoRepository;
 
     @Value("${file.directory}")
     private String storageDirectory;
@@ -81,7 +81,7 @@ public class SimpleFileService implements FileService {
         if (fileOptional.isPresent()) {
             deleteFile(fileOptional.get().getPath());
             photoRepository.delete(id);
-        }                
+        }
     }
 
     private void deleteFile(String path) {

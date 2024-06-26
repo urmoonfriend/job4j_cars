@@ -1,7 +1,7 @@
 package kz.job4j.cars.service.impl;
 
 import kz.job4j.cars.models.entity.Car;
-import kz.job4j.cars.repository.CarRepository;
+import kz.job4j.cars.repository.DatabaseRepository;
 import kz.job4j.cars.service.CarService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +14,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Slf4j
 public class CarServiceImpl implements CarService {
-    private final CarRepository carRepository;
+    private final DatabaseRepository<Car> carRepository;
 
     @Override
     public Car create(Car car) {

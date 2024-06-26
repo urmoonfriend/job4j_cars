@@ -1,8 +1,8 @@
 package kz.job4j.cars.repository.impl;
 
 import kz.job4j.cars.models.entity.Car;
-import kz.job4j.cars.repository.CarRepository;
 import kz.job4j.cars.repository.CrudRepository;
+import kz.job4j.cars.repository.DatabaseRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -12,11 +12,12 @@ import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
-public class HibernateCarRepository implements CarRepository {
+public class HibernateCarRepository implements DatabaseRepository<Car> {
     private final CrudRepository crudRepository;
 
     /**
      * Создать в базе авто.
+     *
      * @param car авто на создание
      * @return car авто.
      */

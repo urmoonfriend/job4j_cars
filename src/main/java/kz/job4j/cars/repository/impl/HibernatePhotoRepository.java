@@ -1,23 +1,18 @@
 package kz.job4j.cars.repository.impl;
 
 import kz.job4j.cars.models.entity.Photo;
-import kz.job4j.cars.models.entity.Post;
 import kz.job4j.cars.repository.CrudRepository;
-import kz.job4j.cars.repository.PhotoRepository;
+import kz.job4j.cars.repository.DatabaseRepository;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.criterion.Restrictions;
-import org.hibernate.criterion.SimpleExpression;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
-public class HibernatePhotoRepository implements PhotoRepository {
+public class HibernatePhotoRepository implements DatabaseRepository<Photo> {
     private final CrudRepository crudRepository;
 
     /**

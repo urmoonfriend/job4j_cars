@@ -2,7 +2,7 @@ package kz.job4j.cars.repository.impl;
 
 import kz.job4j.cars.models.entity.Owner;
 import kz.job4j.cars.repository.CrudRepository;
-import kz.job4j.cars.repository.OwnerRepository;
+import kz.job4j.cars.repository.DatabaseRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
-public class HibernateOwnerRepository implements OwnerRepository {
+public class HibernateOwnerRepository implements DatabaseRepository<Owner> {
     private final CrudRepository crudRepository;
 
     /**
